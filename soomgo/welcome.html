@@ -1,0 +1,674 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>데이터분석 강의관련 소개</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+}
+
+.simple-table-header {
+	background: rgb(247, 246, 243);
+	color: black;
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1fac504d-edd3-4abd-8090-8da49dc295d4" class="page sans"><header><img class="page-cover-image" src="https://i.ytimg.com/vi/nDuCD1D92HY/maxresdefault.jpg" style="object-position:center 72.76%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">😃</span></div><h1 class="page-title">데이터분석 강의관련 소개</h1></header><div class="page-body"><h3 id="4ca929e7-65f0-4ddb-a7e1-dcc8c1a7a489" class="">🟡 <strong>문의 사항: </strong></h3><ul id="66748bc8-2fb1-4cd2-a6b2-6a1f8c401cdd" class="bulleted-list"><li style="list-style-type:disc"><strong>카카오톡 han1991b</strong></li></ul><ul id="4ecf27f2-bcd8-4895-ad97-12a78cc7fc0b" class="bulleted-list"><li style="list-style-type:disc"><strong>이메일 hanbikim8@gmail.com</strong></li></ul><ul id="65c0fc15-1f6a-416e-a083-b2ed5b1c9f78" class="bulleted-list"><li style="list-style-type:disc"><strong>전화 010-2433-7464</strong></li></ul><p id="ac779e38-9b33-4125-bd08-f221cdc766f5" class="">
+</p><h3 id="3c651543-a5ab-4fab-89e7-0493aae694d3" class="">🟡 학교</h3><p id="d4eaa1e3-23af-47cb-9c5b-dedd25c42799" class=""><strong>🇦🇺 Australian National University B.S 통계학 / 수학  [졸업] </strong></p><p id="c67c3136-0a38-4328-8787-251146cc6d26" class=""><strong>🇰🇷 성균관대학교 M.S 데이터사이언스융합과 [재학]</strong></p><p id="67420479-5076-41e1-87e1-25045e6d8f33" class="">
+</p><p id="66e54318-ac01-4a43-9bb4-9a32fe8db7c6" class=""><strong>연구분야: </strong></p><p id="a03e4291-93d2-441c-854f-23c0d0f57305" class=""><strong>개인:</strong> <mark class="highlight-orange_background"><strong>Computer Vision</strong></mark><strong> | </strong><mark class="highlight-orange_background"><strong>Semi-Supervised Learning </strong></mark></p><p id="08cc0e1b-17f6-4b20-9cdf-137e9937b69a" class=""><strong>연구실: </strong><mark class="highlight-blue_background"><strong>Time Series Analysis</strong></mark><strong> | </strong><mark class="highlight-blue_background"><strong>Machine Unlearning</strong></mark></p><p id="d0e45c60-132a-42a4-b8a8-95bbe111d6c6" class="">
+</p><h3 id="3205332b-3e25-4124-9cf6-30f832be4670" class="">🟡 제공하고 있는 강의 리스트</h3><ul id="b0265e5b-c4e4-47fb-8090-75a58a3227c0" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-purple_background">웹프로그래밍 / 웹스크래핑</mark></strong></li></ul><ul id="2b34b58a-ea89-4608-8f54-76df336de3b8" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-orange_background">머신러닝/딥러닝을 활용한 데이터 마이닝</mark></strong></li></ul><ul id="34b7885d-cf91-48e2-ad8a-318cfb6e828b" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-yellow_background">텍스트 마이닝 / 자연어 처리</mark></strong></li></ul><ul id="89dcfdd9-8e4b-4df0-a743-0ca4b1b8d7a8" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-teal_background">이미지 프로세싱 / 컴퓨터비전 </mark></strong></li></ul><ul id="d1c8f854-d076-4127-b987-4fc25d811ec3" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-blue_background">시계열분석</mark></strong><strong> </strong></li></ul><ul id="7226a11f-c84f-4dc4-aa81-6a2400ecfb22" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-red_background">강화학습 </mark></strong></li></ul><p id="b4b0d954-7b42-4b4a-a4be-a63e9b6350e0" class="">
+</p><p id="d9b9f8a2-955f-44ac-87c3-af1eb04da8fa" class=""><strong>그 외 기초가 부족하신 분들을 위해:</strong></p><ul id="2bd4376b-8a99-4232-9afb-aa29f0dea4f1" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-pink_background"><strong>미적분 / 선형대수학 / 이산수학 및 대학수학</strong></mark></li></ul><ul id="ca2b3a08-619d-4ebf-97b3-257ec68cc751" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-gray_background"><strong>통계학</strong></mark></li></ul><ul id="c9809e98-e41e-4976-aa0e-d843f8418b0e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown_background"><strong>자료구조 및 알고리즘 / 프로그래밍기초 (PYTHON)</strong></mark></li></ul><p id="e094a7df-b7be-4f27-a725-5b1f7417c32d" class="">
+</p><h3 id="da077159-b81e-4b22-9a15-b0f1ef26e78d" class="">🟡 특강 이력</h3><ul id="6b781404-a750-407a-aba8-cac28453d0d8" class="bulleted-list"><li style="list-style-type:disc"><strong>연세대 텍스트 마이닝 특강 진행 [15 회] [</strong><strong><a href="https://hanbi-kim.github.io/TextMining/">수업자료링크</a></strong><strong>]</strong></li></ul><ul id="dc5767f6-bd7a-43bc-a86b-0268777a65ad" class="bulleted-list"><li style="list-style-type:disc"><strong>한겨례 신문사 기초 파이썬 특강 진행 [12 회] [</strong><strong><a href="https://hanbi-kim.github.io/IntroToPython/">수업자료링크</a></strong><strong>]</strong></li></ul><p id="25903b76-c023-4a63-8a05-4427351a456a" class="">
+</p><h3 id="ddcace93-d7b7-40a1-8be3-42e509313d27" class="">🟡 그 외 개인 강의 작업 리스트</h3><h3 id="083882ea-d23a-4156-8e4c-c1f8c96d8ec0" class="block-color-purple_background"><mark class="highlight-purple_background">Bootstrap을 활용한 개인 웹페이지 제작</mark></h3><ul id="ca61b904-8c68-4397-846a-a98da4e2b768" class="bulleted-list"><li style="list-style-type:disc">HTML / CSS / JavaScript 기초 익히기.</li></ul><ul id="58234599-c23e-45a1-aeb5-cdfdec403e1c" class="bulleted-list"><li style="list-style-type:disc">Bootstrap을 활용하여 개인 웹페이지 제작하기.</li></ul><ul id="336c326e-2904-4e89-a30c-8fc0f2ad9ea3" class="bulleted-list"><li style="list-style-type:disc">GITHUB을 활용하여 개인 웹페이지 업로드.</li></ul><div id="8c28181b-c2e5-4945-ac33-efb61a9a7232" class="column-list"><div id="979e047b-a15a-4fab-9ad0-8df1df3c395c" style="width:56.25%" class="column"><figure id="f72e5fd2-a16a-484f-97d6-bdcaeebb207e" class="image"><a href="images/Untitled.png"><img style="width:432px" src="images/Untitled.png"/></a></figure></div><div id="ed638f90-1128-450c-932b-eb5fdac70a27" style="width:43.75%" class="column"><figure id="75ad78e2-5623-42af-bd80-abb3ecf1328d" class="image"><a href="images/Untitled%201.png"><img style="width:931px" src="images/Untitled%201.png"/></a><figcaption><strong>참고: 개인 정보 및 이력이 포함됨으로 본인의 이력 페이지로 대체하였습니다.</strong></figcaption></figure></div></div><p id="0a49cf8b-b324-42e7-8665-c1da3b1b9347" class="">
+</p><p id="74858c84-2775-436f-893a-de406f754561" class="">
+</p><p id="689c41ee-ac02-4f84-8d32-af39b0a6f0e9" class=""><strong>참고: 아래 내용은 함께 수업을 진행하신 분들이 직접 배우신 내용을 토대로 작업하신 부분 캡쳐.</strong></p><h3 id="1dfa3418-1152-4d9a-b98c-306bf09d3f78" class="block-color-purple_background"><mark class="highlight-purple_background">웹 스크래핑</mark></h3><ul id="6a740e7a-e3d8-497d-bb04-21e483b82d98" class="bulleted-list"><li style="list-style-type:disc">BeautifulSoup, Selenium을 활용한 웹 스크래핑 </li></ul><p id="2d5569b6-a5df-45cd-8263-131e9b753df7" class=""><strong>활용 예제:</strong></p><ol type="1" id="23877ddb-67eb-4798-a06f-c027c00be36f" class="numbered-list" start="1"><li><strong>정형 데이터 저장하기.</strong></li></ol><div id="17bb7fdf-a5ce-41ea-bf13-344021b3ac55" class="column-list"><div id="30d1f11c-a48b-4e6b-b3cf-2e40f5789fd4" style="width:56.25%" class="column"><figure id="6ef52e15-c274-4960-848a-f56cd39a0639" class="image"><a href="images/Untitled%202.png"><img style="width:432px" src="images/Untitled%202.png"/></a></figure></div><div id="4e034282-5bab-47fe-910b-17f50a75f1ef" style="width:43.75%" class="column"><figure id="d8cde553-b9b7-40bb-ac98-772dc527b07c" class="image"><a href="images/Untitled%203.png"><img style="width:577px" src="images/Untitled%203.png"/></a></figure></div></div><p id="53239302-3559-4584-a244-7cb2374862ea" class=""><strong>KBO 리그 기록 및 순위 데이터를 CSV 파일로 저장하기.</strong></p><div id="18622bcb-b1aa-4a3d-8d5d-0714aa2358f1" class="column-list"><div id="8baae479-b794-4382-8566-333c505cb5bf" style="width:62.5%" class="column"><ol type="1" id="67c58288-6fab-456f-acbf-3c23b22e0a33" class="numbered-list" start="2"><li><strong>텍스트 데이터 저장하기.</strong></li></ol><figure id="ebe3ccd8-9e6a-49ef-9c52-31b57ce7b26b" class="image"><a href="images/Untitled%204.png"><img style="width:611px" src="images/Untitled%204.png"/></a></figure><p id="bd784eb5-598c-4ee9-b497-5663bfbce490" class="">  <strong>트위터 세포라 관련 트윗 10424개를 CSV 파일로 저장</strong></p></div><div id="26d10a67-87e2-4d3b-9330-b9551cb9bfdb" style="width:37.5%" class="column"><ol type="1" id="f12624d9-51f0-4434-bca2-01cfa7c34b39" class="numbered-list" start="3"><li><strong>이미지 데이터 저장하기.</strong></li></ol><figure id="7da98ea5-acf6-448a-8e2c-01950138a496" class="image"><a href="images/Untitled%205.png"><img style="width:927px" src="images/Untitled%205.png"/></a></figure><p id="93b270bb-a756-4abc-85d8-f78b6770a3bd" class=""><strong>구글 이미지 햄버거 이미지를 저장</strong></p><p id="06333d66-d354-45c1-8b64-64a950f5964b" class="">
+</p></div></div><h3 id="1ef76817-6937-4a25-a68d-c1f98236f342" class="block-color-orange_background"><mark class="highlight-orange_background">머신러닝을 활용한 데이터분석</mark></h3><h3 id="df3225ce-891e-44de-919b-5df4f7dd2114" class="">데이터 전처리 및 EDA</h3><div id="7139b4e2-a970-4267-8507-a3f3fc2667be" class="column-list"><div id="dde61284-7f03-4cd6-95cd-fd148cdabeac" style="width:50%" class="column"><figure id="808d98e2-952a-4976-ab43-885325f33727" class="image"><a href="images/Untitled%206.png"><img style="width:288px" src="images/Untitled%206.png"/></a><figcaption><strong>데이터 출처: </strong>Kaggle Iris Dataset [<a href="https://www.kaggle.com/uciml/iris">링크</a>]</figcaption></figure></div><div id="80250c50-30f4-4586-bb10-8441b1d61ff6" style="width:50%" class="column"><figure id="d1db8378-c682-46b8-b173-16f2ba2c3299" class="image"><a href="images/Untitled%207.png"><img style="width:1098px" src="images/Untitled%207.png"/></a><figcaption> <strong>데이터 시각화를 통한 데이터 이해</strong></figcaption></figure></div></div><h3 id="14ff86e8-aabb-48b4-b18b-204d118fb493" class="">데이터 모델링</h3><figure id="84500cbf-0625-4462-87ea-c9576122afa0" class="image"><a href="images/Untitled%208.png"><img style="width:1096px" src="images/Untitled%208.png"/></a></figure><p id="0249e717-a1c6-42be-a7ac-6d0a689bb89c" class="">                                           <strong> K-Nearest Neighbour 머신러닝 알고리즘을 활용 </strong></p><div id="9cfa6994-bb12-4c8c-9fc5-5dd2690f79cb" class="column-list"><div id="323525ab-b632-48f3-9e04-f39ed54f341e" style="width:43.75%" class="column"><figure id="9cac65e1-74a1-478a-870f-59b13cce49a3" class="image"><a href="images/Untitled%209.png"><img style="width:288px" src="images/Untitled%209.png"/></a></figure></div><div id="a3b52e9e-3171-4b1b-95b1-ab7a2bd5da12" style="width:56.25%" class="column"><figure id="fc3e71e6-f986-47a6-9cce-3c7e638160c8" class="image"><a href="images/Untitled%2010.png"><img style="width:1085px" src="images/Untitled%2010.png"/></a></figure></div></div><ul id="1a83da3e-2712-437b-bc7e-57d19856273e" class="bulleted-list"><li style="list-style-type:disc">Accuracy / Precision / Recall을 통한 모델 평가.</li></ul><ul id="aadf25bd-4127-42c0-a3fa-ae22a3e11602" class="bulleted-list"><li style="list-style-type:disc">Model Parameter의 변화를 주며 Model 성능 향상시키기.</li></ul><p id="a30769e8-3d12-4462-8e16-acdd5b73c913" class="">
+</p><h3 id="1055c1f2-e6ea-41f1-96aa-33ac97d81498" class="block-color-yellow_background"><mark class="highlight-yellow_background">자연어처리</mark></h3><h3 id="0ac87496-a0ba-4410-bcd2-78146dbc6d42" class="">워드 클라우드 (Word Cloud) </h3><p id="08cb735d-4e39-490c-9c10-e34e7254b215" class=""> 문장에 쓰여진 단어의 수가 많을 수록 크게 표시하는 그래프. </p><ul id="49b7981d-c5b7-47ad-9f93-3b14a4b2f1c7" class="bulleted-list"><li style="list-style-type:disc">KONPLY OKT 형태소 분리를 활용하여 문장의 명사만 분리하기.</li></ul><ul id="d626891c-655d-4ff6-bb59-ad4b019ddcaa" class="bulleted-list"><li style="list-style-type:disc">긍정 / 부정 문장을 나누어 각각 워드 클라우드 만들기.</li></ul><p id="3bfcb3af-89bf-4774-a933-30df70ed3247" class=""><strong>활용 예제:</strong></p><div id="36c33510-e52f-4502-9d5a-162114fb4f5a" class="column-list"><div id="8a73935d-58ad-4a10-8205-4dd6f0ac3435" style="width:50%" class="column"><figure id="d8e60cbd-c925-4516-ace6-651721a238ff" class="image"><a href="images/Untitled%2011.png"><img style="width:685px" src="images/Untitled%2011.png"/></a><figcaption><strong>긍정적인 문장의 워드 클라우드</strong></figcaption></figure></div><div id="89a26843-d420-446c-894e-7e379223c42f" style="width:50%" class="column"><figure id="1842fd99-673b-4b94-8971-090667ecfb4c" class="image"><a href="images/Untitled%2012.png"><img style="width:674px" src="images/Untitled%2012.png"/></a><figcaption><strong>부정적인 문장의 워드 클라우드</strong></figcaption></figure></div></div><h3 id="a184e9f4-844c-4bbd-bc0f-cd7aeba6d95a" class=""><strong>LDA(Latent Dirichlet Allocation)</strong></h3><p id="7792af34-919b-49b2-ba16-01f9fecce41b" class="">문장의 단어들을 확률에 기반하여 정해진 K개의 토픽으로 분류하기.</p><ul id="9f925dde-5dfd-4d74-9fea-cd9db7b2d622" class="bulleted-list"><li style="list-style-type:disc">gensim, pyLDAvis 패키지를 활용하여 주어진 K개의 토픽으로 분류하기.</li></ul><p id="9287af8b-ac15-4c9f-a9b4-3ea92521658c" class=""><strong>활용 예제:</strong></p><figure id="e50437e8-d3d4-4dae-97ee-46c6ec7e2a41" class="image"><a href="images/Untitled%2013.png"><img style="width:1314px" src="images/Untitled%2013.png"/></a><figcaption><strong>2개의 토픽으로 분류하고 pyLDAvis를 통해 시각화하기</strong></figcaption></figure><h3 id="18f0acef-eac0-45b3-ad3a-3e899a509c32" class="">LSTM 모델을 활용한 감성분석</h3><ul id="41a352a7-21a1-423a-b63f-7d7af14bd50b" class="bulleted-list"><li style="list-style-type:disc">Tensorflow Keras를 활용하여 텍스트 데이터 전처리: Tokenizer, Embedding 등...</li></ul><ul id="8b9b6f98-dad0-4872-8885-1a7dde3decc2" class="bulleted-list"><li style="list-style-type:disc">Tensorflow Keras를 활용하여 LSTM 모델 생성.</li></ul><ul id="fe8b7a56-4ecc-49e4-a7d5-e028e7aa1611" class="bulleted-list"><li style="list-style-type:disc">앞서 생성된 모델을 저장하고 테스트 데이터에 활용하기.</li></ul><p id="c3285098-b254-4a3f-a7d2-d0442a51e82d" class="">
+</p><p id="e4d50855-7967-4302-8e05-a6d887425df2" class=""><strong>활용 예제:</strong></p><ul id="4281a6d0-6c44-461d-bc15-9e75e60a9ff2" class="bulleted-list"><li style="list-style-type:disc">긍정 리뷰 테스트:</li></ul><figure id="1f021f3f-bd0a-4bcd-9230-28e388c24663" class="image"><a href="images/Untitled%2014.png"><img style="width:557px" src="images/Untitled%2014.png"/></a></figure><p id="41cdaa96-776a-4451-917c-8fb12fded327" class="">
+</p><ul id="62ed0cc2-fef0-4ac0-acec-3b8b19587583" class="bulleted-list"><li style="list-style-type:disc">부정 리뷰 테스트:</li></ul><figure id="4a918a31-7024-4ee7-9dfb-5ec70a29688a" class="image"><a href="images/Untitled%2015.png"><img style="width:555px" src="images/Untitled%2015.png"/></a></figure><p id="10a7e39b-5210-43af-a192-0f11db541aff" class="">
+</p><h2 id="b9d17232-be04-41b8-8f59-5492875aabbb" class="block-color-teal_background">컴퓨터비전 / 이미지프로세싱</h2><h3 id="c92a5be0-069b-446f-b651-8b8ef0eb0024" class="">CNN모델을 통한 이미지 분류</h3><ul id="8ed5c2f9-dec4-4186-809e-106c79e6245d" class="bulleted-list"><li style="list-style-type:disc">MNIST 손글씨 데이터를 CNN을 통해 학습하기.</li></ul><ul id="0f654906-7670-445c-a8d8-92e8eebe51c0" class="bulleted-list"><li style="list-style-type:disc">그림판에서 직접 그린 이미지를 전처리하여 앞선 모델에 테스트하기.</li></ul><div id="faca35f4-0dcd-4e3e-a5dd-0ee01f911329" class="column-list"><div id="386a8f1a-a9a3-47a9-93ba-2dc66df79426" style="width:50%" class="column"><figure id="76b297e2-8bab-4447-828d-6e261a1524d1" class="image"><a href="images/Untitled%2016.png"><img style="width:384px" src="images/Untitled%2016.png"/></a></figure></div><div id="6a5c2c8e-4b31-4df4-b2f5-6a0a83d0dbfc" style="width:50%" class="column"><figure id="656457df-f6e3-451b-b3e5-9b97eace2b19" class="image"><a href="images/Untitled%2017.png"><img style="width:291px" src="images/Untitled%2017.png"/></a></figure></div></div><p id="16dedafe-6e2e-42c4-9a01-b130ceb18146" class="">
+</p><h3 id="cafea41f-b366-40db-bc44-a1d57a885360" class="block-color-red_background">데이터시각화<mark class="highlight-orange_background"> </mark></h3><ul id="0e1430bc-3ca4-407b-806a-e235be06d644" class="bulleted-list"><li style="list-style-type:disc">Matplotlib, Seaborn을 활용한 데이터 시각화</li></ul><ul id="bfdb6310-5fba-42ce-8c7c-b8f9f8dc2cd7" class="bulleted-list"><li style="list-style-type:disc">Folium을 활용한 지도 데이터 시각화 </li></ul><p id="a68a979b-69c6-406f-820a-61d2e1d93b54" class="">
+</p><p id="c0de9343-fdd6-4b81-8545-26f57e3cdc86" class=""><strong>활용 예제:</strong>                </p><div id="3b6e0d51-a240-4506-a328-2dd489542302" class="column-list"><div id="85df8086-a558-4c09-8b1f-911bb02c60b1" style="width:56.25%" class="column"><figure id="f5f7ca57-139d-4b99-8770-bafa2507f37f" class="image"><a href="images/Untitled%2018.png"><img style="width:384px" src="images/Untitled%2018.png"/></a></figure></div><div id="99efd5f4-1a3e-474f-887a-d6316954f7f5" style="width:43.74999999999999%" class="column"><figure id="a93d6ce2-ceea-4c5d-998f-0e87cc36d6e8" class="image"><a href="images/Untitled%2019.png"><img style="width:288px" src="images/Untitled%2019.png"/></a></figure></div></div><div id="8efb2d4c-083a-42ff-b738-6decc5bd8781" class="column-list"><div id="0591d2f3-6621-41ed-9cfc-f913abbf0e96" style="width:50%" class="column"><figure id="00873781-3179-4fd9-b5e8-4f9872058795" class="image"><a href="images/Untitled%2020.png"><img style="width:384px" src="images/Untitled%2020.png"/></a></figure><figure id="db43daf6-c86a-487b-8bb7-1fd244abfb8d" class="image"><a href="images/Untitled%2021.png"><img style="width:1089px" src="images/Untitled%2021.png"/></a></figure><figure id="0d72f8e1-0e59-4c7c-8b3b-5ae566cae3e4" class="image"><a href="images/Untitled%2022.png"><img style="width:336px" src="images/Untitled%2022.png"/></a></figure></div><div id="906ae58a-54b3-40d4-a226-ad64d72f9a54" style="width:50%" class="column"><figure id="595328a5-8404-41ae-94c1-a578b1973e2a" class="image"><a href="images/Untitled%2023.png"><img style="width:288px" src="images/Untitled%2023.png"/></a></figure><figure id="39347b68-a193-4f62-bde1-94084f66530b" class="image"><a href="images/Untitled%2024.png"><img style="width:1080px" src="images/Untitled%2024.png"/></a></figure></div></div><p id="5c70eaee-5885-49b6-97cc-1d0774c3a09a" class="">
+</p><p id="ec6ead37-f3cf-40c7-81fd-86305ee57c1d" class="">
+</p><h3 id="d9040470-238f-4961-b52c-931332f38087" class="">🟡 리뷰</h3><p id="9fa3f768-74fc-4530-a77a-e667532814e1" class="">함께 해주셨던 분들은... </p><ul id="ccf50db1-db4f-4c71-b05b-63eae686ce1a" class="bulleted-list"><li style="list-style-type:disc">대학원 과정 중 논문을 위해 데이터 분석 및 인공지능 분야에 대한 접목이 필요하신 경우.</li></ul><ul id="8e83a5cf-71ad-40f5-bd47-d1605ee10042" class="bulleted-list"><li style="list-style-type:disc">대학교 졸업 후 취업 준비하며 데이터 분석에 대한 역량을 키우고 싶으신 경우. </li></ul><ul id="f7fd74a8-67ee-4a39-ab56-56ad5de6eb97" class="bulleted-list"><li style="list-style-type:disc">대학교 수업 중 과제 및 수업 진도를 따라가기 위한 경우. </li></ul><figure id="dc7da486-a4f8-45b6-b55e-a42a8ebcd373" class="image"><a href="images/SmartSelect_20220117-183029.jpg"><img style="width:1440px" src="images/SmartSelect_20220117-183029.jpg"/></a></figure></div></article></body></html>
